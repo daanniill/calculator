@@ -46,15 +46,22 @@ button:hover {
     height: 425px;
     background-color: silver;
     box-shadow: 3px 3px 10px 3px gray;
+    border: 6px outset darkgray;
+    border-top: 0px outset darkgray;
+    border-left: 0px outset darkgray
 }
 
-.buttons {
+.buttons, .functions{
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     padding: 10px;
 }
+.functions {
+    padding: 0;
+}
+
 .functions button {
     padding: 5px;
     height: 25px;
