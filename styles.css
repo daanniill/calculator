@@ -22,8 +22,8 @@ button {
 button:hover {
     box-shadow: 0 0 0 0;
     border: 3px inset dimgray;
-    border-top: 0px inset dimgray;
-    border-right: 1px inset dimgray
+    border-top: 0.5px inset gray;
+    border-right: 1px inset gray
 }
 
 .screen {
