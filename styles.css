@@ -3,6 +3,17 @@ body {
     flex-direction: column;
     align-items: center;
 }
+button {
+    margin: 5px;
+    width: 50px;
+    height: 50px;
+    background-color: whitesmoke;
+    border: 0px;
+    border-radius: 5px;
+    box-shadow: 0px 3px 2px 2px darkgray;
+    padding: 10px;
+    font-weight: bold;
+}
 
 .screen {
     background-color: lightblue;
@@ -10,7 +21,7 @@ body {
     height: 70px;
     margin: 20px;
     border-radius: 5px;
-    box-shadow: 0px 3px 2px 3px gray;
+    box-shadow: 0px 3px 2px 3px darkgray;
 }
 
 .calculator {
@@ -19,7 +30,15 @@ body {
     align-items: center;
     border-radius: 10px;
     width: 300px;
-    height: 500px;
+    height: 400px;
     background-color: silver;
-    box-shadow: 0 -3px 10px 5px gray;
+    box-shadow: 0 -3px 10px 3px gray;
+}
+
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
 }
