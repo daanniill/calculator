@@ -8,3 +8,10 @@ function appendNumber(number) {
 
 }
 
+function appendOperation(operation) {
+    if (currentInput === '') return;
+    currentOperation = operation;
+    previousInput = currentInput;
+    currentInput = '';
+    document.getElementsByClassName("screen")[0].innerText = `${previousInput} ${currentOperation}`
+}
