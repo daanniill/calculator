@@ -19,11 +19,15 @@ button {
     color: #404040;
 }
 
-button:hover {
+button:active {
     box-shadow: 0 0 0 0;
     border: 3px inset dimgray;
     border-top: 0.5px inset gray;
     border-right: 1px inset gray
+}
+
+button:hover {
+    background-color: azure;
 }
 
 .screen {
@@ -33,7 +37,7 @@ button:hover {
     margin: 20px;
     border-radius: 5px;
     border: 5px inset darkgray;
-    border-top: 1px inset darkgray;
+    border-top: 1px outset gray;
     border-right: 0.5px inset darkgray
 }
 
@@ -60,6 +64,7 @@ button:hover {
 }
 .functions {
     padding: 0;
+    width: 250px;
 }
 
 .functions button {
