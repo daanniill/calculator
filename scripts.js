@@ -84,3 +84,10 @@ function calculate() {
         }
     }
 }
+
+function clearDisplay() {
+    currentInput = '';
+    previousInput = '';
+    currentOperation = '';
+    document.getElementsByClassName("screen")[0].innerText = '';
+}
