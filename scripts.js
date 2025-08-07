@@ -3,9 +3,18 @@ let currentOperation = ''
 let previousInput = ''
 
 function appendNumber(number) {
-    currentInput += number
-    document.getElementsByClassName("screen")[0].innerText = `${previousInput} ${currentOperation} ${currentInput}`
-
+    if (currentInput.length < 6) {
+        currentInput += number
+        document.getElementsByClassName("screen")[0].innerText = `${previousInput} ${currentOperation} ${currentInput}`
+    }
+    else {
+        currentInput += number
+        let temp = currentInput
+        let numberValue = parseFloat(temp)
+        numberValue = numberValue.toExponential(2)
+        document.getElementsByClassName("screen")[0].innerText = `${previousInput} ${currentOperation} ${numberValue}`
+    }
+    
 }
 
 function appendOperation(operation) {
