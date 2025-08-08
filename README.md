@@ -1,7 +1,7 @@
-# 🧮 JavaScript Calculator
+# Calculator
 
 A simple, browser-based calculator built with **HTML**, **CSS**, and **JavaScript**.  
-It supports basic arithmetic operations, square roots, sign toggling, and scientific notation for large numbers.
+It supports basic arithmetic operations and scientific notation for large numbers.
 
 ---
 
@@ -19,6 +19,7 @@ It supports basic arithmetic operations, square roots, sign toggling, and scient
 
 ```
 calculator/
+|── fonts         # Contains font for calculator display
 │── index.html    # Main HTML layout
 │── styles.css    # Calculator styling
 │── scripts.js    # Core JavaScript logic
@@ -70,7 +71,8 @@ calculator/
 ## 📌 Future Improvements
 
 - Add **keyboard support** for faster input.  
-- Add **memory functions** (M+, M-, MR).  
+- Add **memory functions** (M+, M-, MR). 
+- Add functionality to various **function buttons** on calculator
 - Improve **mobile responsiveness**.  
 - Dark mode toggle 🌙.
 
