@@ -50,6 +50,10 @@ button:hover {
     text-shadow: 2px 3px 3px cadetblue;
 }
 
+::-webkit-scrollbar-thumb {
+    background: red;
+}
+
 .calculator {
     display: flex;
     flex-direction: column;

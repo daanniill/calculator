@@ -1,9 +1,14 @@
 let currentInput = ''
 let currentOperation = ''
 let previousInput = ''
+let afterEqual = false
 
 function appendNumber(number) {
-    if (currentInput.length <= 6) {
+    if (afterEqual) {
+        currentInput = ''
+        afterEqual = false
+    }
+    if (currentInput.length < 8) {
         currentInput += number
         document.getElementsByClassName("screen")[0].innerText = `${currentOperation} ${currentInput}`
     }
@@ -68,6 +73,7 @@ function calculate() {
     currentInput = result.toString();
     currentOperation = '';
     previousInput = '';
+    afterEqual = true;
     if (currentInput.length <= 6) {
         document.getElementsByClassName("screen")[0].innerText = `${currentInput}`
     }
