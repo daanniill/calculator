@@ -4,6 +4,10 @@ let previousInput = ''
 let afterEqual = false
 
 function appendNumber(number) {
+    if (currentInput === 'infinity') {
+        document.getElementsByClassName("screen")[0].innerText = `infinity`
+        return
+    }
     if (afterEqual) {
         currentInput = ''
         afterEqual = false
@@ -19,6 +23,7 @@ function appendNumber(number) {
         numberValue = numberValue.toExponential(2)
         if (numberValue.toString().length > 8)
         {
+            currentInput = 'infinity'
             document.getElementsByClassName("screen")[0].innerText = `infinity`
         }
         else {
@@ -42,8 +47,9 @@ function appendOperation(operation) {
 
 function calculate() {
     if (previousInput === '' || currentInput === '') return;
-    if (previousInput === 'infinity') {
+    if (previousInput === 'infinity' || currentInput === 'infinity') {
         document.getElementsByClassName("screen")[0].innerText = `infinity`
+        return
     }
     let result;
     let prev = parseFloat(previousInput);
@@ -74,7 +80,7 @@ function calculate() {
     currentOperation = '';
     previousInput = '';
     afterEqual = true;
-    if (currentInput.length <= 6) {
+    if (currentInput.length < 8) {
         document.getElementsByClassName("screen")[0].innerText = `${currentInput}`
     }
     else {
@@ -83,10 +89,46 @@ function calculate() {
         numberValue = numberValue.toExponential(2)
         if (numberValue.toString().length > 8)
         {
+            currentInput = 'infinity'
             document.getElementsByClassName("screen")[0].innerText = `infinity`
         }
         else {
             document.getElementsByClassName("screen")[0].innerText = `${currentOperation} ${numberValue}`
+        }
+    }
+}
+
+function radicand() {
+    if (currentInput === 'infinity') {
+        document.getElementsByClassName("screen")[0].innerText = `infinity`
+        return
+    }
+    currentInput = parseFloat(currentInput)
+    currentInput = Math.sqrt(currentInput)
+    currentInput = currentInput.toString()
+    afterEqual = true
+    if (currentInput.length < 8) {
+        document.getElementsByClassName("screen")[0].innerText = `${currentInput}`
+    }
+    else {
+        let temp = currentInput
+        let numberValue = parseFloat(temp)
+        numberValue = numberValue.toFixed(6)
+        if (numberValue.toString().length > 8)
+        {
+            numberValue = parseFloat(temp)
+            numberValue = numberValue.toExponential(2)
+            if (numberValue.toString().length > 8)
+            {
+                currentInput = 'infinity'
+                document.getElementsByClassName("screen")[0].innerText = `infinity`
+            }
+            else {
+                document.getElementsByClassName("screen")[0].innerText = `${numberValue}`
+            }
+        }
+        else {
+            document.getElementsByClassName("screen")[0].innerText = `${numberValue}`
         }
     }
 }
